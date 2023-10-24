@@ -21,6 +21,7 @@ services:
       redis-net:  
         aliases:
            - frontend
+    restart: always  # Add this line to enable automatic restart
 
 
   #Frontend service - worker
@@ -40,6 +41,7 @@ services:
       redis-net:
         aliases:
           - worker
+    restart: always  # Add this line to enable automatic restart
 
   #storefront service
   storefront:
@@ -60,6 +62,7 @@ services:
         redis-net:
           aliases:
             - storefront
+      restart: always  # Add this line to enable automatic restart
      
   #Database service (Postgresql)   
   database:

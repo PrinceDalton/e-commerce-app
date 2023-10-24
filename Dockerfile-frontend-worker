@@ -9,5 +9,4 @@ RUN yarn cache clean
 RUN yarn
 RUN chmod +x /usr/src/app/wait-for-it.sh
 # Build your application
-RUN yarn add node-sass
 RUN yarn build

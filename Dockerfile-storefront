@@ -5,7 +5,10 @@ RUN apt-get update
 RUN curl https://github.com/vendure-ecommerce/storefront/archive/v0.1.25.zip  -L -o storefront.zip
 RUN unzip storefront.zip
 RUN cp -a "storefront-angular-starter-0.1.25/."  .
+RUN rm -rf node_modules
+RUN yarn cache clean
 RUN yarn
+RUN yarn start
 RUN yarn build:ssr:docker 
 CMD ["node", "dist/server/main.js"]
 EXPOSE 4000

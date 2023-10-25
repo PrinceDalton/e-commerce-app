@@ -4,8 +4,6 @@ WORKDIR /usr/src/app
 VOLUME /usr/src/app
 RUN apt-get update
 COPY ./yarn/*  ./
-RUN rm -rf node_modules
-RUN yarn cache clean
 RUN yarn
 RUN chmod +x /usr/src/app/wait-for-it.sh
 # Build your application

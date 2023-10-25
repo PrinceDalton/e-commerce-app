@@ -45,6 +45,7 @@ services:
 
   #storefront service
   storefront:
+      container_name: storefront
       build: 
         context: .
         dockerfile: Dockerfile-storefront
